@@ -28,7 +28,7 @@ imagen:['502.png']
 {
 id:4,
 nombre:'American Automatic transmission',
-description:'American Motor Oil Automatic Transmission Fluid (AMO ATF) es un fluido para transmisiones automáticas diseñado para ofrecer un rendimiento excepcional y protección contra la fricción en todas las marcas de transmisiones automáticas, siendo compatible con vehículos de gasolina y diésel.',
+descripcion:'American Motor Oil Automatic Transmission Fluid (AMO ATF) es un fluido para transmisiones automáticas diseñado para ofrecer un rendimiento excepcional y protección contra la fricción en todas las marcas de transmisiones automáticas, siendo compatible con vehículos de gasolina y diésel.',
 category:'motor',
 imagen:['11.jpeg']
 },
@@ -37,7 +37,7 @@ imagen:['11.jpeg']
 {
 id:5,
 nombre:'Mobil Delvac Extreme SAE 15W-40 API CK-4.',
-description:'Mobil Delvac Extreme SAE 15W-40 API CK-4 es un aceite de motor sintético de alto rendimiento (Heavy Duty) especialmente formulado para vehículos de carga pesada, maquinaria y equipos de combustible diésel.',
+descripcion:'Mobil Delvac Extreme SAE 15W-40 API CK-4 es un aceite de motor sintético de alto rendimiento (Heavy Duty) especialmente formulado para vehículos de carga pesada, maquinaria y equipos de combustible diésel.',
 category:'motor',
 imagen:['12.jpeg']
 },
@@ -45,7 +45,7 @@ imagen:['12.jpeg']
 {
 id:5,
 nombre:'Mobil Delvac Extreme SAE 10W-30 API CK-4  ',
-description:'Mobil Delvac Extreme SAE 10W-30 API CK-4 es un aceite de motor sintético de alto rendimiento (Heavy Duty) especialmente formulado para vehículos de carga pesada, maquinaria y equipos de combustible diésel.',
+descripcion:'Mobil Delvac Extreme SAE 10W-30 API CK-4 es un aceite de motor sintético de alto rendimiento (Heavy Duty) especialmente formulado para vehículos de carga pesada, maquinaria y equipos de combustible diésel.',
 category:'motor',
 imagen:['60.jpeg']
 },
