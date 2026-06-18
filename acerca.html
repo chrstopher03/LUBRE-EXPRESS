@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acerca de Nosotros | LUBRI EXPRESS</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root{
+--rojo:#c40000;
+--rojo2:#8b0000;
+--amarillo:#f7c600;
+--negro:#111;
+--blanco:#fff;
+--gris:#f5f5f5;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff;
+color:#333;
+}
+
+/* HERO */
+
+.acerca-hero{
+min-height:100vh;
+padding:120px 5%;
+background:linear-gradient(135deg,#c40000,#8b0000);
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+}
+
+.tag{
+display:inline-block;
+padding:10px 20px;
+background:rgba(255,255,255,.15);
+border-radius:30px;
+color:white;
+margin-bottom:20px;
+font-weight:600;
+}
+
+.acerca-texto h1{
+font-size:4rem;
+line-height:1.1;
+color:white;
+margin-bottom:20px;
+}
+
+.acerca-texto p{
+font-size:18px;
+line-height:1.8;
+color:white;
+}
+
+.acerca-img{
+display:flex;
+justify-content:center;
+}
+
+.acerca-img img{
+max-width:550px;
+width:100%;
+filter:drop-shadow(0 20px 30px rgba(0,0,0,.3));
+}
+
+/* TITULOS */
+
+.titulo{
+text-align:center;
+font-size:40px;
+color:var(--rojo);
+margin-bottom:50px;
+}
+
+/* HISTORIA */
+
+.historia{
+padding:90px 5%;
+}
+
+.historia-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.historia img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.historia h2{
+color:var(--rojo);
+font-size:40px;
+margin-bottom:20px;
+}
+
+.historia p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+/* SERVICIOS */
+
+.servicios{
+padding:90px 5%;
+background:var(--gris);
+}
+
+.servicios-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.servicio{
+background:white;
+padding:35px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.servicio:hover{
+transform:translateY(-8px);
+}
+
+.servicio i{
+font-size:50px;
+color:var(--rojo);
+margin-bottom:20px;
+}
+
+.servicio h3{
+margin-bottom:15px;
+color:var(--rojo);
+}
+
+.servicio p{
+line-height:1.7;
+color:#666;
+}
+
+/* VALORES */
+
+.valores{
+padding:90px 5%;
+}
+
+.valores-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.valor{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.valor i{
+font-size:50px;
+color:var(--rojo);
+margin-bottom:15px;
+}
+
+/* BENEFICIOS */
+
+.beneficios{
+padding:90px 5%;
+background:var(--gris);
+}
+
+.beneficios-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.beneficio{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.beneficio i{
+font-size:50px;
+color:var(--rojo);
+margin-bottom:15px;
+}
+
+/* ESTADISTICAS */
+
+.estadisticas{
+padding:80px 5%;
+background:var(--rojo);
+color:white;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+text-align:center;
+}
+
+.stats-grid h2{
+font-size:60px;
+color:#f5f5f5;
+}
+
+/* PRODUCTOS */
+
+.productos{
+padding:90px 5%;
+}
+
+.productos-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.producto{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.producto img{
+width:100%;
+height:250px;
+object-fit:contain;
+padding:20px;
+background:white;
+}
+
+.producto-info{
+padding:20px;
+}
+
+.producto-info h3{
+color:var(--rojo);
+margin-bottom:10px;
+}
+
+/* CTA */
+
+.cta{
+padding:100px 5%;
+text-align:center;
+background:linear-gradient(135deg,#c40000,#8b0000);
+color:white;
+}
+
+.cta h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.cta p{
+margin-bottom:25px;
+font-size:18px;
+}
+
+.cta a{
+display:inline-block;
+padding:15px 35px;
+background:var(--amarillo);
+color:#111;
+font-weight:700;
+text-decoration:none;
+border-radius:12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.acerca-hero,
+.historia-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.acerca-texto h1{
+font-size:2.5rem;
+}
+
+.stats-grid{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="acerca-hero">
+
+<div class="acerca-texto">
+
+<span class="tag">
+LUBRICANTES PREMIUM
+</span>
+
+<h1>
+LUBRI EXPRESS
+</h1>
+
+<p>
+Somos especialistas en lubricantes automotrices, grasas,
+refrigerantes y mantenimiento preventivo. Además ofrecemos
+servicio profesional de cambio de aceite para vehículos
+livianos y pesados.
+</p>
+
+</div>
+
+<div class="acerca-img">
+<img src="logoo.jpeg" alt="">
+</div>
+
+</section>
+
+<!-- HISTORIA -->
+
+<section class="historia">
+
+<div class="historia-grid">
+
+<img src="505.jpeg" alt="">
+
+<div>
+
+<h2>Nuestra Historia</h2>
+
+<p>
+LUBRI EXPRESS nace con el objetivo de brindar productos
+automotrices de calidad y servicios confiables para el
+cuidado de los vehículos.
+</p>
+
+<p>
+Nos especializamos en lubricantes, grasas, refrigerantes,
+filtros y mantenimiento preventivo, ofreciendo soluciones
+que prolongan la vida útil del motor.
+</p>
+
+<p>
+Trabajamos con productos de calidad y asesoría especializada
+para garantizar la mejor experiencia a nuestros clientes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICIOS -->
+
+<section class="servicios">
+
+<h2 class="titulo">
+Nuestros Servicios
+</h2>
+
+<div class="servicios-grid">
+
+<div class="servicio">
+<i class="fas fa-oil-can"></i>
+<h3>Cambio de Aceite</h3>
+<p>
+Realizamos cambios de aceite con productos de alta calidad
+para proteger el motor y mejorar su rendimiento.
+</p>
+</div>
+
+<div class="servicio">
+<i class="fas fa-filter"></i>
+<h3>Cambio de Filtros</h3>
+<p>
+Instalación de filtros de aceite y aire para un mejor
+funcionamiento del vehículo.
+</p>
+</div>
+
+<div class="servicio">
+<i class="fas fa-car"></i>
+<h3>Revisión General</h3>
+<p>
+Verificación de niveles de aceite, refrigerante y otros
+componentes importantes.
+</p>
+</div>
+
+<div class="servicio">
+<i class="fas fa-tools"></i>
+<h3>Asesoría Técnica</h3>
+<p>
+Recomendamos el lubricante adecuado según el tipo de motor
+y fabricante.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- VALORES -->
+
+<section class="valores">
+
+<h2 class="titulo">
+Nuestra Empresa
+</h2>
+
+<div class="valores-grid">
+
+<div class="valor">
+<i class="fas fa-bullseye"></i>
+<h3>Misión</h3>
+<p>Ofrecer productos y servicios automotrices de calidad.</p>
+</div>
+
+<div class="valor">
+<i class="fas fa-eye"></i>
+<h3>Visión</h3>
+<p>Ser líderes en lubricación y mantenimiento automotriz.</p>
+</div>
+
+<div class="valor">
+<i class="fas fa-handshake"></i>
+<h3>Compromiso</h3>
+<p>Atención personalizada y confianza para cada cliente.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- BENEFICIOS -->
+
+<section class="beneficios">
+
+<h2 class="titulo">
+¿Por Qué Elegirnos?
+</h2>
+
+<div class="beneficios-grid">
+
+<div class="beneficio">
+<i class="fas fa-cogs"></i>
+<h3>Rendimiento</h3>
+<p>Máxima protección para motores modernos.</p>
+</div>
+
+<div class="beneficio">
+<i class="fas fa-shield-alt"></i>
+<h3>Protección</h3>
+<p>Mayor vida útil para el motor y componentes.</p>
+</div>
+
+<div class="beneficio">
+<i class="fas fa-truck"></i>
+<h3>Disponibilidad</h3>
+<p>Amplio inventario de productos automotrices.</p>
+</div>
+
+<div class="beneficio">
+<i class="fas fa-star"></i>
+<h3>Calidad</h3>
+<p>Trabajamos con marcas reconocidas y confiables.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ESTADISTICAS -->
+
+<section class="estadisticas">
+
+<div class="stats-grid">
+
+<div>
+<h2>500+</h2>
+<p>Clientes Satisfechos</p>
+</div>
+
+<div>
+<h2>100+</h2>
+<p>Productos</p>
+</div>
+
+<div>
+<h2>5+</h2>
+<p>Años de Experiencia</p>
+</div>
+
+<div>
+<h2>100%</h2>
+<p>Compromiso y Calidad</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<section class="productos">
+
+<h2 class="titulo">
+Nuestros Productos
+</h2>
+
+<div class="productos-grid">
+
+<div class="producto">
+<img src="507.jpeg">
+<div class="producto-info">
+<h3>Lubricantes</h3>
+<p>Aceites premium para motores gasolina y diésel.</p>
+</div>
+</div>
+
+<div class="producto">
+<img src="506.jpeg">
+<div class="producto-info">
+<h3>Filtros</h3>
+<p>Filtros de aceite, aire y combustible para motores gasolina y diésel.</p>
+</div>
+</div>
+
+<div class="producto">
+<img src="36.jpeg">
+<div class="producto-info">
+<h3>Bidones</h3>
+<p>Bidones de aceite para motores diésel y gasolina.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>
+¿Necesitas un cambio de aceite?
+</h2>
+
+<p>
+Visítanos y recibe atención profesional para el cuidado de tu vehículo.
+</p>
+
+<a href="catalogo.html">
+Ver Productos
+</a>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Categorías | LUBRI EXPRES</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root{
+--rojo:#c40000;
+--rojo2:#8b0000;
+--amarillo:#f7c600;
+--gris:#f5f5f5;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+padding-bottom:90px;
+}
+
+.header{
+background:var(--rojo);
+color:white;
+padding:20px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.header h1{
+font-size:28px;
+}
+
+.categorias{
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+padding:30px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card i{
+font-size:55px;
+color:var(--rojo);
+margin-bottom:15px;
+}
+
+.card h2{
+margin-bottom:10px;
+}
+
+.card p{
+color:#666;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:75px;
+background:white;
+display:flex;
+justify-content:space-around;
+align-items:center;
+box-shadow:0 -5px 20px rgba(0,0,0,.08);
+}
+
+.nav-item{
+background:none;
+border:none;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:5px;
+color:#666;
+cursor:pointer;
+font-size:12px;
+}
+
+.nav-item i{
+font-size:22px;
+}
+
+.active{
+color:var(--rojo);
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+<h1>Categorías</h1>
+</header>
+
+<section class="categorias">
+
+<div class="card"
+onclick="irCategoria('motor')">
+
+<i class="fa-solid fa-oil-can"></i>
+
+<h2>Aceites Motor</h2>
+
+<p>
+Lubricantes para motores gasolina y diésel.
+</p>
+
+</div>
+
+<div class="card"
+onclick="irCategoria('grasa')">
+
+<i class="fa-solid fa-gears"></i>
+
+<h2>Grasas</h2>
+
+<p>
+Grasas multipropósito e industriales.
+</p>
+
+</div>
+
+<div class="card"
+onclick="irCategoria('hidraulico')">
+
+<i class="fa-solid fa-industry"></i>
+
+<h2>Hidráulicos</h2>
+
+<p>
+Aceites hidráulicos para maquinaria.
+</p>
+
+</div>
+
+</section>
+
+<nav class="bottom-nav">
+
+<button
+class="nav-item"
+onclick="window.location='index.html'">
+
+<i class="fa-solid fa-house"></i>
+<span>Inicio</span>
+
+</button>
+
+<button class="nav-item active">
+
+<i class="fa-solid fa-layer-group"></i>
+<span>Categorías</span>
+
+</button>
+
+<button
+class="nav-item"
+onclick="window.location='carrito.html'">
+
+<i class="fa-solid fa-cart-shopping"></i>
+<span>Carrito</span>
+
+</button>
+
+</nav>
+
+<script>
+
+function irCategoria(cat){
+
+localStorage.setItem(
+"categoriaSeleccionada",
+cat
+);
+
+window.location =
+"index.html#productos";
+
+}
+
+</script>
+
+</body>
+</html>
+```

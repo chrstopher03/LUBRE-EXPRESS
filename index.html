@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUBRI EXPRES</title>
+<link rel="icon" href="logo.jpeg">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+<header class="header">
+
+<div class="logo">
+    <img src="logo.jpeg" alt="Logo Lubri Expres">
+    <h2>LUBRI EXPRES</h2>
+</div>
+
+<button class="menu-btn" id="menuBtn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Productos</a>
+    <a href="acerca.html">Acerca de</a>
+    <a href="carrito.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Carrito
+    </a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="tag">
+            LUBRICANTES PREMIUM
+        </span>
+
+        <h1>
+            POTENCIA Y PROTECCIÓN
+            PARA TU MOTOR
+        </h1>
+
+        <p>
+            Aceites, grasas y lubricantes de alta calidad
+            para todo tipo de vehículos.
+        </p>
+
+        <a href="catalogo.html" class="btn-principal">
+            Ver Productos
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="logoo.jpeg" alt="">
+    </div>
+
+</section>
+<section class="catalogo">
+
+<div class="catalogo-header">
+
+<h2>Nuestros Productos</h2>
+
+<div class="filtros">
+
+<input
+type="text"
+id="buscador"
+placeholder="Buscar producto..."
+>
+
+<select id="categoria">
+
+<option value="todos">
+Todas las categorías
+</option>
+
+<option value="motor">
+Aceites Motor
+</option>
+
+<option value="grasa">
+Grasas
+</option>
+
+<option value="hidraulico">
+Hidráulicos
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div
+class="productos"
+id="productos">
+</div>
+
+</section>
+
+<section class="banner">
+
+<div>
+
+<h2>
+TU MOTOR MERECE
+LO MEJOR
+</h2>
+
+<p>
+Trabajamos con lubricantes de alta calidad
+para garantizar la protección de cada motor.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h2>LUBRI EXPRES</h2>
+<p>Lubricantes de calidad para tu vehículo.</p>
+</div>
+
+<div>
+<h3>Enlaces</h3>
+<ul>
+<li><a href="#">Inicio</a></li>
+<li><a href="#">Productos</a></li>
+<li><a href="#">Nosotros</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Categorías</h3>
+<ul>
+<li>Aceites</li>
+<li>Grasas</li>
+<li>Hidráulicos</li>
+</ul>
+</div>
+
+<div>
+<h3>Síguenos</h3>
+<div class="redes">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-whatsapp"></i>
+</div>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 LUBRI EXPRES
+</div>
+
+</footer>
+<a
+class="whatsapp"
+href="https://wa.me/50584187053"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<div class="modal-img">
+
+<img id="modalImage">
+
+</div>
+
+<div class="modal-info">
+
+<h2 id="modalNombre"></h2>
+
+<p id="modalDescripcion"></p>
+
+<label>Cantidad</label>
+
+<div class="cantidad-box">
+
+<button onclick="restarCantidad()">
+
+</button>
+
+<input
+id="cantidad"
+type="number"
+value="1"
+min="1"
+>
+
+<button onclick="sumarCantidad()">
++
+</button>
+
+</div>
+
+<div class="modal-buttons">
+
+<button
+class="cerrar"
+onclick="cerrarModal()">
+
+Cerrar
+
+</button>
+
+<button
+class="agregar"
+onclick="agregarCarrito()">
+
+Agregar 
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<nav class="bottom-nav">
+
+    <button class="nav-item active"onclick="window.location.href='index.html'">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </button>
+
+
+<button class="nav-item "    
+class="nav-item"onclick="window.location.href='catalogo.html'">
+
+<i class="fa fa-box"></i>
+<span>Catálogo</span>
+</button>
+
+    <button
+        class="nav-item"
+        onclick="window.location.href='carrito.html'">
+
+        <div class="cart-icon">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span
+                id="cartCount"
+                class="cart-badge">
+                0
+            </span>
+
+        </div>
+
+        <span>Carrito</span>
+
+    </button>
+
+</nav>
+
+<script src="funcion.js"></script>
+
+</body>
+</html>
