@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QR LUBRI EXPRES</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f5f5;
+    font-family:Arial, sans-serif;
+}
+
+.qr-container{
+    position:relative;
+    background:#fff;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+#qrcode{
+    position:relative;
+    width:300px;
+    height:300px;
+}
+
+.logo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:70px;
+    height:70px;
+    background:white;
+    padding:5px;
+    border-radius:15px;
+    object-fit:contain;
+}
+
+h2{
+    margin-bottom:15px;
+    color:#ff6600;
+}
+</style>
+</head>
+<body>
+
+<div class="qr-container">
+    <h2>LUBRI EXPRES</h2>
+
+    <div id="qrcode"></div>
+
+    <img src="logo.jpeg" alt="Logo" class="logo">
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+
+// CAMBIA ESTA URL POR TU DOMINIO REAL
+const urlSitio = "https://tudominio.com/index.html";
+
+new QRCode(document.getElementById("qrcode"), {
+    text: urlSitio,
+    width: 300,
+    height: 300,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
+
+</script>
+
+</body>
+</html>
