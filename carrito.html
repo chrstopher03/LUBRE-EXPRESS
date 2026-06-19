@@ -300,14 +300,14 @@ document.getElementById("resumen");
 
 function cargarCarrito(){
 
-lista.innerHTML="";
-resumen.innerHTML="";
+lista.innerHTML = "";
+resumen.innerHTML = "";
 
-if(carrito.length===0){
+if(carrito.length === 0){
 
-lista.innerHTML=`
+lista.innerHTML = `
 <div class="vacio">
-<h2>🛒 Carrito vacío</h2>
+<h2>Carrito vacío</h2>
 <p>No has agregado productos todavía.</p>
 </div>
 `;
@@ -335,8 +335,6 @@ alt="${item.nombre}">
 <div class="info">
 
 <h3>${item.nombre}</h3>
-
-<p>${item.descripcion}</p>
 
 <div class="cantidad-box">
 
@@ -372,7 +370,7 @@ onclick="eliminar(${index})">
 
 });
 
-resumen.innerHTML=`
+resumen.innerHTML = `
 
 <div class="resumen">
 
@@ -490,7 +488,7 @@ if(result.isConfirmed){
 
 localStorage.removeItem("carrito");
 
-carrito=[];
+carrito = [];
 
 cargarCarrito();
 
@@ -528,6 +526,9 @@ total > 0 ? "flex" : "none";
 }
 
 }
+
+
+
 function enviarWhatsApp() {
 
   const now = new Date();

@@ -456,3 +456,60 @@ mensaje,
 },1200);
 
 }
+
+
+// Registrar Service Worker
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+        .then(() => console.log("Service Worker registrado"))
+        .catch(err => console.log("Error:", err));
+    });
+}
+
+// Botón de instalación
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    let btn = document.getElementById("installBtn");
+
+    if (!btn) {
+        btn = document.createElement("button");
+        btn.id = "installBtn";
+        btn.innerHTML = "📲 Instalar App";
+
+        btn.style.position = "fixed";
+        btn.style.bottom = "90px";
+        btn.style.right = "20px";
+        btn.style.padding = "12px 20px";
+        btn.style.background = "#25D366";
+        btn.style.color = "#fff";
+        btn.style.border = "none";
+        btn.style.borderRadius = "30px";
+        btn.style.fontWeight = "bold";
+        btn.style.cursor = "pointer";
+        btn.style.zIndex = "9999";
+
+        document.body.appendChild(btn);
+
+        btn.addEventListener("click", async () => {
+            deferredPrompt.prompt();
+
+            const { outcome } = await deferredPrompt.userChoice;
+
+            if (outcome === "accepted") {
+                console.log("App instalada");
+            }
+
+            deferredPrompt = null;
+            btn.remove();
+        });
+    }
+});
+
+window.addEventListener("appinstalled", () => {
+    console.log("Aplicación instalada correctamente");
+});
