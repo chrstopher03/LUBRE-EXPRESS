@@ -7,6 +7,7 @@
 <title>QR LUBRI EXPRES</title>
 
 <style>
+
 body{
     margin:0;
     height:100vh;
@@ -14,70 +15,240 @@ body{
     justify-content:center;
     align-items:center;
     background:#f5f5f5;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
+
 
 .qr-container{
     position:relative;
-    background:#fff;
-    padding:20px;
+    background:white;
+    padding:25px;
     border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
     text-align:center;
 }
 
-#qrcode{
-    position:relative;
-    width:300px;
-    height:300px;
+
+h2{
+    color:#ff6600;
 }
+
+
+#qrcode{
+    width:350px;
+    height:350px;
+    margin:auto;
+}
+
 
 .logo{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:70px;
-    height:70px;
+    width:80px;
+    height:80px;
     background:white;
-    padding:5px;
+    padding:6px;
     border-radius:15px;
     object-fit:contain;
 }
 
-h2{
-    margin-bottom:15px;
-    color:#ff6600;
+
+button{
+
+    margin-top:20px;
+    background:#ff6600;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+
 }
+
+
+button:hover{
+
+    background:#e65c00;
+
+}
+
 </style>
+
 </head>
+
 <body>
 
+
 <div class="qr-container">
-    <h2>LUBRI EXPRES</h2>
 
-    <div id="qrcode"></div>
 
-    <img src="logo.jpeg" alt="Logo" class="logo">
+<h2>LUBRI EXPRES</h2>
+
+
+<div id="qrcode"></div>
+
+
+<img src="logo.jpeg" class="logo" id="logo">
+
+
+<button onclick="descargarQR()">
+Descargar QR
+</button>
+
+
 </div>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
+
+
 <script>
 
-// CAMBIA ESTA URL POR TU DOMINIO REAL
-const urlSitio = "https://lubri-express.netlify.app/index.html";
 
-new QRCode(document.getElementById("qrcode"), {
-    text: urlSitio,
-    width: 300,
-    height: 300,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H
+// Link de tu página
+
+const urlSitio = 
+"https://lubri-express.netlify.app/index.html";
+
+
+
+// Crear QR
+
+new QRCode(
+document.getElementById("qrcode"),
+{
+
+text:urlSitio,
+
+width:350,
+
+height:350,
+
+colorDark:"#000000",
+
+colorLight:"#ffffff",
+
+correctLevel:QRCode.CorrectLevel.H
+
 });
 
+
+
+
+// Descargar QR con logo
+
+function descargarQR(){
+
+
+const qr = document.querySelector("#qrcode canvas");
+
+
+const canvas = document.createElement("canvas");
+
+
+const ctx = canvas.getContext("2d");
+
+
+
+canvas.width = qr.width;
+
+canvas.height = qr.height;
+
+
+
+// dibuja QR
+
+ctx.drawImage(
+qr,
+0,
+0
+);
+
+
+
+// cargar logo
+
+const logo = new Image();
+
+
+logo.src="logo.jpeg";
+
+
+
+logo.onload=function(){
+
+
+
+let tamaño = 80;
+
+
+
+let x = 
+(canvas.width - tamaño) / 2;
+
+
+
+let y = 
+(canvas.height - tamaño) / 2;
+
+
+
+// espacio blanco
+
+ctx.fillStyle="white";
+
+
+ctx.fillRect(
+x-8,
+y-8,
+tamaño+16,
+tamaño+16
+);
+
+
+
+// dibujar logo
+
+ctx.drawImage(
+logo,
+x,
+y,
+tamaño,
+tamaño
+);
+
+
+
+// descargar
+
+let link=document.createElement("a");
+
+
+link.download="QR-LUBRI-EXPRES.png";
+
+
+link.href =
+canvas.toDataURL("image/png");
+
+
+link.click();
+
+
+
+};
+
+
+}
+
+
+
 </script>
+
 
 </body>
 </html>
